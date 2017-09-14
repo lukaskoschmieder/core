@@ -197,25 +197,24 @@ class SettingsManager implements ISettingsManager {
 		if($type === 'admin') {
 			return [
 				new Section('apps', $this->l->t('Apps'), 105, 'list'),
-				new Section('general', $this->l->t('General'), 100),
-				new Section('storage', $this->l->t('Storage'), 95, 'folder'),
-				new Section('security', $this->l->t('Security'), 90, 'shield'),
-				new Section('authentication', $this->l->t('User Authentication'), 87, 'user'),
-				new Section('encryption', $this->l->t('Encryption'), 85, 'password'),
-				new Section('workflow', $this->l->t('Workflows & Tags'), 85, 'workflows'),
-				new Section('sharing', $this->l->t('Sharing'), 80, 'share'),
-				new Section('search', $this->l->t('Search'), 75, 'search'),
-				new Section('updates', $this->l->t('Updates'), 20, 'update'),
-				new Section('help', $this->l->t('Help & Tips'), -5, 'info'),
-				new Section('additional', $this->l->t('Additional'), -10, 'more'),
+				new Section('general', $this->l->t('General'), 100, $this->urlGenerator->imagePath('core', 'actions/settings.svg')),
+				new Section('storage', $this->l->t('Storage'), 95,  $this->urlGenerator->imagePath('core', 'filetypes/folder.svg')),
+				new Section('security', $this->l->t('Security'), 90, $this->urlGenerator->imagePath('core', 'apps/shield.svg')),
+				new Section('authentication', $this->l->t('User Authentication'), 87, $this->urlGenerator->imagePath('core', 'actions/user.svg')),
+				new Section('encryption', $this->l->t('Encryption'), 85, $this->urlGenerator->imagePath('encryption', 'actions/password.svg')),
+				new Section('workflow', $this->l->t('Workflows & Tags'), 85, $this->urlGenerator->imagePath('core', 'apps/workflow.svg')),
+				new Section('sharing', $this->l->t('Sharing'), 80, $this->urlGenerator->imagePath('core', 'actions/share.svg')),
+				new Section('search', $this->l->t('Search'), 75, $this->urlGenerator->imagePath('core', 'actions/search.svg')),
+				new Section('help', $this->l->t('Help & Tips'), -5, $this->urlGenerator->imagePath('core', 'actions/info.svg')),
+				new Section('additional', $this->l->t('Additional'), -10, $this->urlGenerator->imagePath('core', 'actions/more.svg')),
 			];
 		} else if($type === 'personal') {
 			return [
-				new Section('general', $this->l->t('General'), 100, 'user'),
-				new Section('storage', $this->l->t('Storage'), 50, 'folder'),
-				new Section('security', $this->l->t('Security'), 30, 'shield'),
-				new Section('encryption', $this->l->t('Encryption'), 20),
-				new Section('additional', $this->l->t('Additional'), -10, 'more'),
+				new Section('general', $this->l->t('General'), 100, $this->urlGenerator->imagePath('core', 'actions/user.svg')),
+				new Section('storage', $this->l->t('Storage'), 50, $this->urlGenerator->imagePath('core', 'filetypes/folder.svg')),
+				new Section('security', $this->l->t('Security'), 30, $this->urlGenerator->imagePath('core', 'apps/shield.svg')),
+				new Section('encryption', $this->l->t('Encryption'), 20, $this->urlGenerator->imagePath('core', 'actions/settings.svg')),
+				new Section('additional', $this->l->t('Additional'), -10, $this->urlGenerator->imagePath('core', 'actions/more.svg')),
 			];
 		}
 	}

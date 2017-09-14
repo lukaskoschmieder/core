@@ -34,13 +34,13 @@ class Section implements ISection {
 	protected $name;
 	/** @var int */
 	protected $priority;
-	protected $icon;
+	protected $url;
 
-	public function __construct($id, $name, $priority, $icon='settings') {
+	public function __construct($id, $name, $priority, $url) {
 		$this->id = $id;
 		$this->name = $name;
 		$this->priority = $priority;
-		$this->icon = $icon;
+		$this->url = $url;
 	}
 
 	public function getID() {
@@ -55,8 +55,7 @@ class Section implements ISection {
 		return $this->priority;
 	}
 
-	public function getIconName() {
-		return $this->icon;
+	public function getIconUrl() {
+		return $this->url;
 	}
-
 }
